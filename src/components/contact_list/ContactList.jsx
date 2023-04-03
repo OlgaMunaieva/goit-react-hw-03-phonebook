@@ -1,5 +1,6 @@
 import { ContainerItem, ContainerList } from './ContactList.styled';
 import PropTypes from 'prop-types';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 const ContactList = ({ contacts, onDelete }) => {
   return (
@@ -7,7 +8,7 @@ const ContactList = ({ contacts, onDelete }) => {
       {contacts.map(({ id, name, number }) => (
         <ContainerItem key={id}>
           {name}: {number}
-          <button onClick={() => onDelete({ id })}>Delete</button>
+          <AiOutlineCloseCircle onClick={() => onDelete({ id })} />
         </ContainerItem>
       ))}
     </ContainerList>
